@@ -53,7 +53,7 @@ To demonstrate how to send product Brand and product Category to Google Analytic
 **Step 6 - create Apex class to take data from Opportunity and Product Object and send to Google Analytics**
 
 Setup->Develop->Apex Classes->New
-Copy from MyClosedWonEcommItems.cls
+Copy from [MyClosedWonEcommItems.cls](https://github.com/infotrustconsulting/Salesforce-Google-Analytics-Integration/blob/master/MyClosedWonEcommItems.cls)
 
 **Step 7 - create trigger on Opportunity object when Stage is 'Closed Won' to load MyClosedWonEcommItems class that in turn will send the data to GA**
 
