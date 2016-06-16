@@ -1,4 +1,4 @@
-# Step by Step Guide for natively integrating SalesForce with Google Analytics
+# Step by Step Guide for natively integrating Salesforce.com with Google Analytics
 
 Once this demo is setup, you will be able to use Google Analytics Measurement Protocol to send data from Opportunity and Contact objects into Google Analytics to track an event when an opportunity is closed. This event will also use Enhanced E-Commerce to track products associated with an opportunity and store both enhanced e-commerce transaction and enhanced e-commerce product line items in GA. 
 
