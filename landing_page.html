@@ -1,0 +1,101 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+<style>
+td
+{
+padding:20px;
+}
+label {
+    font: normal 22px arial !important;
+}
+input
+{
+    font: normal 22px arial !important;
+    height: 30px;
+    width: 300px;
+	
+}
+
+
+
+</style>
+</head>
+<body>
+<h1>HOME</h1>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40002875-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+ga(function(tracker) {
+  var clientId = tracker.get('clientId');
+  console.log('clientid='+clientId);
+  document.getElementById('00Ni0000002oiOt').value=clientId;
+});
+
+function validate()
+{
+	if (document.getElementById('first_name').value=='')
+	{
+		alert('first name missing');
+		document.getElementById('first_name').focus();
+		return false;
+	}
+	if (document.getElementById('last_name').value=='')
+	{
+		alert('last name missing');
+		document.getElementById('last_name').focus();
+		return false;
+	}
+	if (document.getElementById('email').value=='')
+	{
+		alert('email missing');
+		document.getElementById('email').focus();
+		return false;
+	}
+	if (document.getElementById('company').value=='')
+	{
+		alert('company name missing');
+		document.getElementById('company').focus();
+		return false;
+	}			
+	return true;
+}
+</script>
+
+<table>
+
+ <form onsubmit='return validate()' action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<input type=hidden name="oid" value="00Di0000000K9sf">
+<input type=hidden name="retURL" value="http://infotrustdev.com/playground_alex/uasf/thankyou.php">
+ 
+<tr><td><label for="first_name">First Name</label></td><td><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /></td></tr>
+
+<tr><td><label for="last_name">Last Name</label></td><td><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /></td></tr>
+
+<tr><td><label for="email">Email</label></td><td><input  id="email" maxlength="80" name="email" size="20" type="text" /></td></tr>
+
+<tr><td><label for="company">Company</label></td><td><input  id="company" maxlength="40" name="company" size="20" type="text" /></td></tr>
+
+<tr><td><label for="00Ni0000002oiOt">cid</label></td><td><input  id="00Ni0000002oiOt" maxlength="255" name="00Ni0000002oiOt" size="20" type="text" /></td></tr>
+
+<tr><td colspan="2" align="center"><input style="height:40px" type="submit" name="submit" value="Send Lead to Salesforce.com"></td></tr>
+
+</form>
+</table>
+
+
+
+
+
+</body>
+</html>
