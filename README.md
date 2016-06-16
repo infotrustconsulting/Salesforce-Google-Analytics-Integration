@@ -20,11 +20,11 @@ Setup->Customize->Leads->Fields->New
 
 Add 30 character text field named 'cid'
 
-You need to customize all your lead gen forms and processes, including marketing automation platforms such as Hubspot, Marketo, Eloqua, etc... to store Google Analytics visitor CID field in lead object.
+Step 4 - You need to customize all your lead gen forms and processes, including marketing automation platforms such as Hubspot, Marketo, Eloqua, etc... to store Google Analytics visitor CID field in lead object.
 
+landing_page.html file contains simple web2lead form along with sample code for extracting visitor ID from Google Analytics. 
 
-
-Step 4 - map Lead.cid field to Contact.cid for lead conversion into a contact
+Step 5 - map Lead.cid field to Contact.cid for lead conversion into a contact
 
 Setup->Customize->Leads->Lead Custom Field Mapping
 
@@ -49,12 +49,12 @@ To demonstrate how to send product Brand and product Category to Google Analytic
 
 4. This is a very important assumption that most likely will need to be customized in production. The assumption is that we can grab cid (Google Analytics Visitor ID) from the first Contact Object associated with an Account Object associated with the Opportunity. For real production environment it may make sense to have a field on the Opportunity object that would allow us to track which Contact from the Account was the first person to initiate contact with the seller and should therefore get the credit if we want to attribute the sale to the first person whoever contacted seller's organization. Once you are comfortable with the setup, we encourage you to explore other scenarious for figuring out who should get the credit.
 
-Step 5 - create Apex class to take data from Opportunity and Product Object and send to Google Analytics
+Step 6 - create Apex class to take data from Opportunity and Product Object and send to Google Analytics
 
 Setup->Develop->Apex Classes->New
 Copy from MyClosedWonEcommItems.cls
 
-Step 6 - Right now UA number is hardcoded in MyClosedWonEcommItems.cls but you should replace this UA number with your GA UA Number. Assuming that you have 2 different UA numbers - production and staging, you can leverage the following code to dynamically switch where the data should be sent:
+Step 7 - Right now UA number is hardcoded in MyClosedWonEcommItems.cls but you should replace this UA number with your GA UA Number. Assuming that you have 2 different UA numbers - production and staging, you can leverage the following code to dynamically switch where the data should be sent:
 
 String ua='';
 public static Boolean runningInASandbox() {
