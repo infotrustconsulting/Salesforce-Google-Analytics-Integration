@@ -1,4 +1,4 @@
-# Salesforce-Google-Analytics-Integration
+# Guide to Salesforce.com native integration with Google Analytics
 
 Step by Step Guide to integrating SalesForce with Google Analytics
 
