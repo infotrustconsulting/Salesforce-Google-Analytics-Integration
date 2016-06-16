@@ -55,7 +55,12 @@ Step 6 - create Apex class to take data from Opportunity and Product Object and 
 Setup->Develop->Apex Classes->New
 Copy from MyClosedWonEcommItems.cls
 
-Step 7 - Right now UA number is hardcoded in MyClosedWonEcommItems.cls but you should replace this UA number with your GA UA Number. Assuming that you have 2 different UA numbers - production and staging, you can leverage the following code to dynamically switch where the data should be sent:
+Step 7 - create trigger on Opportunity object when Stage is 'Closed Won' to load MyClosedWonEcommItems class that in turn will send the data to GA
+
+Setup->Customize->Opportunities-Triggers
+The code for this trigger is provided in OpportunityStatus.tgr file.
+
+Step 8 - Right now UA number is hardcoded in MyClosedWonEcommItems.cls but you should replace this UA number with your GA UA Number. Assuming that you have 2 different UA numbers - production and staging, you can leverage the following code to dynamically switch where the data should be sent:
 
 String ua='';
 public static Boolean runningInASandbox() {
@@ -72,15 +77,3 @@ else
 }
 
 Now sit back and enjoy the ride. Any questions - contact InfoTrust Consulting team at salesforce@infotrustllc.com. We would love to hear from you - send us an email and share your implementation success stories
-
-                
-
-
-
-
-
-
-
-
-
-
