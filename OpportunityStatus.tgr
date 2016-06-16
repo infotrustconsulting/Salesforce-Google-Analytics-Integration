@@ -1,0 +1,23 @@
+trigger OpportunityStatus on Opportunity (after update) {
+
+  for (Integer i = 0; i < Trigger.new.size(); i++)    {
+    if (Trigger.new[i].StageName != Trigger.old[i].StageName        
+     && Trigger.new[i].StageName == 'Closed Won') {
+        
+        system.debug(Trigger.new[i].StageName);
+        Opportunity op=trigger.new[0];
+        list<Contact> ct=[select cid__c from contact where accountid=:op.accountid];
+        system.debug(ct[0].cid__c);
+
+          MyClosedWon.sendConversion(ct[0].cid__c);
+
+          
+          MyClosedWonEcommItems.sendEcomm(String.valueOf(ct[0].cid__c), 
+              String.valueOf(Trigger.new[i].OrderNumber__c), 
+              String.valueOf(Trigger.new[i].amount), 
+              String.valueOf(Trigger.new[i].Sales_Tax__c), 
+              String.valueOf(Trigger.new[i].Order_total__c), 
+              Trigger.new[i].name,Trigger.new[i].id,String.valueOf(Trigger.new[i].shipping__c));
+    }
+}
+}
