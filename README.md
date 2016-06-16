@@ -20,6 +20,10 @@ Setup->Customize->Leads->Fields->New
 
 Add 30 character text field named 'cid'
 
+You need to customize all your lead gen forms and processes, including marketing automation platforms such as Hubspot, Marketo, Eloqua, etc... to store Google Analytics visitor CID field in lead object.
+
+
+
 Step 4 - map Lead.cid field to Contact.cid for lead conversion into a contact
 
 Setup->Customize->Leads->Lead Custom Field Mapping
