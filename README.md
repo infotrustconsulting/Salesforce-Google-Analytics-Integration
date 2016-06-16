@@ -63,7 +63,7 @@ The code for this trigger is provided in OpportunityStatus.tgr file.
 **Step 8 - Configure UA Number**
 Right now UA number is hardcoded in MyClosedWonEcommItems.cls but you should replace this UA number with your GA UA Number. Assuming that you have 2 different UA numbers - production and staging, you can leverage the following code to dynamically switch where the data should be sent:
 
-`String ua='';
+```String ua='';
 public static Boolean runningInASandbox() {
 return [SELECT Id, IsSandbox FROM Organization LIMIT 1].IsSandbox;
     }    
@@ -75,6 +75,6 @@ if (runningInASandbox())
 else
 {
   ua='<production GA Account>';
-}`
+}```
 
 Now sit back and enjoy the ride. Any questions - contact InfoTrust Consulting team at salesforce@infotrustllc.com. We would love to hear from you - send us an email and share your implementation success stories
