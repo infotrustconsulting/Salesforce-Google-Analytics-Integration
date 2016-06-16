@@ -22,7 +22,7 @@ Add 30 character text field named 'cid'
 
 **Step 4 - You need to customize all your lead gen forms and processes, including marketing automation platforms such as Hubspot, Marketo, Eloqua, etc... to store Google Analytics visitor CID field in lead object.**
 
-landing_page.html file contains simple web2lead form along with sample code for extracting visitor ID from Google Analytics. 
+[landing_page.html](https://github.com/infotrustconsulting/Salesforce-Google-Analytics-Integration/blob/master/landing_page.html) file contains simple web2lead form along with sample code for extracting visitor ID from Google Analytics. 
 
 **Step 5 - map Lead.cid field to Contact.cid for lead conversion into a contact**
 
@@ -41,7 +41,7 @@ Note: Most Salesforce environments are heavily customized so for the purposes of
 
 **_Assumption 2 - We are going to send an event to Google Analytics using Salesforce trigger when Opportunity Stage becomes "Closed Won"_**
 
-The code for this trigger is defined in OpportunityStatus.tgr file.
+The code for this trigger is defined in [OpportunityStatus.tgr](https://github.com/infotrustconsulting/Salesforce-Google-Analytics-Integration/blob/master/OpportunityStatus.tgr) file.
 
 **_Assumption 3 - We are going to use Products object to represent GA Transaction line items. _**
 To demonstrate how to send product Brand and product Category to Google Analytics we are going to create two custom fields
@@ -58,7 +58,7 @@ Copy from MyClosedWonEcommItems.cls
 **Step 7 - create trigger on Opportunity object when Stage is 'Closed Won' to load MyClosedWonEcommItems class that in turn will send the data to GA**
 
 Setup->Customize->Opportunities-Triggers
-The code for this trigger is provided in OpportunityStatus.tgr file.
+The code for this trigger is provided in [OpportunityStatus.tgr](https://github.com/infotrustconsulting/Salesforce-Google-Analytics-Integration/blob/master/OpportunityStatus.tgr) file.
 
 **Step 8 - Configure UA Number**
 Right now UA number is hardcoded in MyClosedWonEcommItems.cls but you should replace this UA number with your GA UA Number. Assuming that you have 2 different UA numbers - production and staging, you can leverage the following code to dynamically switch where the data should be sent:
